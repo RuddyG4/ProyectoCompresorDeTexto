@@ -87,9 +87,9 @@ public class CompresorDeTexto {
         this.texto = textoAComprimir.replaceAll("[^a-zA-Z - \n-\n]", ""); //Se elimina cualquier carácter no válido
         this.textoCompreso = new vNbits(this.texto.length(), 6);
         // Se define un vector de bytes donde se guardarán los valores (Ascii) de la cadena de Texto
-        byte textoEnBytes[] = textoAComprimir.getBytes();
+        byte textoEnBytes[] = this.texto.getBytes();
         // Ciclo For para convertir e insertar cada uno de los bytes en el vector de N bits
-        for (int i = 0; i < textoAComprimir.length(); i++) {
+        for (int i = 0; i < this.texto.length(); i++) {
             // Definimos un entero que almacenará el código convertido usando el método "codigoAsciiToCodigoCompreso"
             int codigoCompreso = codigoAsciiToCodigoCompreso(textoEnBytes[i]);
             // Si codigoCompreso = -1 significa que el carácter no era válido
